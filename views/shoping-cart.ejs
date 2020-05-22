@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ogani</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
@@ -15,6 +15,8 @@
     />
 
     <!-- Css Styles -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
@@ -41,12 +43,10 @@
         <ul>
           <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
           <li>
-            <a href="/shoping-cart"
-              ><i class="fa fa-shopping-bag"></i> <span>3</span></a
-            >
-          </li>
-        </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
+            <a href="/shoping-cart"><i class="fa fa-shopping-bag"></i> <span><%=session.totalQty%></span></a>
+        </li>
+      </ul>
+      <div class="header__cart__price">item: <span><%=session.totalPrice%> </span></div>
       </div>
       <div class="humberger__menu__widget">
         <!-- <div class="header__top__right__language">
@@ -167,12 +167,10 @@
               <ul>
                 <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
                 <li>
-                  <a href="/shoping-cart"
-                    ><i class="fa fa-shopping-bag"></i> <span>3</span></a
-                  >
-                </li>
-              </ul>
-              <div class="header__cart__price">item: <span>$150.00</span></div>
+                  <a href="/shoping-cart"><i class="fa fa-shopping-bag"></i> <span><%=session.totalQty%></span></a>
+        </li>
+      </ul>
+      <div class="header__cart__price">item: <span><%=session.totalPrice%> </span></div>
             </div>
           </div>
         </div>
@@ -183,9 +181,9 @@
     </header>
 
     <!-- Hero Section Begin -->
-  <%- include('selection'); %>
+    <%- include('selection'); %>
     <!-- Hero Section End -->
-
+<%- include('validateemail'); %>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
       <div class="container">
@@ -221,72 +219,44 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="shoping__cart__item">
-                      <img src="img/cart/cart-1.jpg" alt="" />
-                      <h5>Vegetable’s Package</h5>
+                  <% if(session.totalQty!=0){
+                    var id = 0;
+                      
+                      getcart.forEach(e=>{ id++; %>
+                      <!-------------------------- vong lap nhieu the tr ----------------------------- -->
+                    <tr class="shoping_tr">
+                    <td class="shoping__cart__item"  field='updates_<%=e.item.tensp %>'>
+                      <img style="width: 100px;" src="images/<%=e.item.maloaisp%>/<%=e.item.fileanh%>" alt="" />
+                      <h5><%=e.item.tensp%><%if(e.item.phantram){%><label>&#160;( -<%=e.item.phantram%>%)</label><%}%></h5> 
                     </td>
-                    <td class="shoping__cart__price">
-                      $55.00
+
+                    <td class="shoping__cart__price" >
+                      <div  class='price_updates_<%=e.item._id %>' >   <%=e.totalprice%> </div>
                     </td>
-                    <td class="shoping__cart__quantity">
+
+                    <td class="shoping__cart__quantity" >
                       <div class="quantity">
-                        <div class="pro-qty">
-                          <input type="text" value="1" />
+                        <div class="pro-qty" id="bt_update" field='updates_<%=e.item._id %>' >
+                          <input type="text" value="<%=e.qty%>" class='qty_updates_<%=e.item._id %>' field='updates_<%=e.item._id %>' />
                         </div>
                       </div>
                     </td>
-                    <td class="shoping__cart__total">
-                      $110.00
+
+                    <td class="shoping__cart__total" >
+                      <div  class='total_updates_<%=e.item._id %>' id='<%= id%>'><%=e.totalprice%> </div>
                     </td>
+
                     <td class="shoping__cart__item__close">
                       <span class="icon_close"></span>
                     </td>
+
                   </tr>
-                  <tr>
-                    <td class="shoping__cart__item">
-                      <img src="img/cart/cart-2.jpg" alt="" />
-                      <h5>Fresh Garden Vegetable</h5>
-                    </td>
-                    <td class="shoping__cart__price">
-                      $39.00
-                    </td>
-                    <td class="shoping__cart__quantity">
-                      <div class="quantity">
-                        <div class="pro-qty">
-                          <input type="text" value="1" />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="shoping__cart__total">
-                      $39.99
-                    </td>
-                    <td class="shoping__cart__item__close">
-                      <span class="icon_close"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="shoping__cart__item">
-                      <img src="img/cart/cart-3.jpg" alt="" />
-                      <h5>Organic Bananas</h5>
-                    </td>
-                    <td class="shoping__cart__price">
-                      $69.00
-                    </td>
-                    <td class="shoping__cart__quantity">
-                      <div class="quantity">
-                        <div class="pro-qty">
-                          <input type="text" value="1" />
-                        </div>
-                      </div>
-                    </td>
-                    <td class="shoping__cart__total">
-                      $69.99
-                    </td>
-                    <td class="shoping__cart__item__close">
-                      <span class="icon_close"></span>
-                    </td>
-                  </tr>
+                  <!-- ---------------------------------------------------------------------------------------- -->
+                      <%})
+                      %>
+                  <%}
+                  %>
+                  
                 </tbody>
               </table>
             </div>
@@ -306,8 +276,8 @@
             <div class="shoping__continue">
               <div class="shoping__discount">
                 <h5>Discount Codes</h5>
-                <form action="#">
-                  <input type="text" placeholder="Enter your coupon code" />
+                <form action="/add-coupon" method="POST">
+                  <input type="text" name="coupon" placeholder="Enter your coupon code" />
                   <button type="submit" class="site-btn">APPLY COUPON</button>
                 </form>
               </div>
@@ -317,11 +287,9 @@
             <div class="shoping__checkout">
               <h5>Cart Total</h5>
               <ul>
-                <li>Subtotal <span>$454.98</span></li>
-                <li style="padding: 0px;">
-                  <span style="font-size: 15px;">-$454.98</span>
-                </li>
-                <li>Total <span>$454.98</span></li>
+                <li>Subtotal <span class="all_sub"><%=subtotal%> </span></li>
+                <li > Discount(%) <span  class="discount"><%=phantram%> </></li>
+                <li>Total <span class="all_total"><%=subtotal - (subtotal*phantram/100)%> </span></li>
               </ul>
               <a href="/checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
             </div>
@@ -345,4 +313,96 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
   </body>
+  <script>
+// var n = 0 ;
+//     var id=0;
+//     // $('.pro-qty input').change( function() {
+//     $('.shoping_tr').each(function (){
+//       id++;
+//   var qty = $('.pro-qty_{{ id }} input').val();
+//   // alert(price);
+//   var price= parseFloat($('.shoping__cart__price_{{ id }}').text());
+// alert (price);
+// qty=2;
+//   var total = qty*price ;
+//   $('.shoping__cart__total_{{ id }}').text(total);
+
+    
+
+//  });
+ 
+// });
+
+jQuery(document).ready(function(){
+    // This button will increment the value
+    
+    var price_total= 0;
+    $('.pro-qty').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // alert(fieldName);
+        // Get its current value
+        var qty = parseInt($('.qty_'+fieldName).val());
+        // alert( fieldName);
+        // alert( qty);
+         var price = parseFloat($('.price_'+fieldName).text());
+        //  alert(qty);
+         var total = price*qty;
+        //  var price = '.'+fieldName;
+        $('.total_'+fieldName).text(total);
+        tinh_total();
+        
+    });
+    // loi chua tinh tong all 
+    $('.pro-qty input').change(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // alert(fieldName);
+        // Get its current value
+        var qty = parseInt($('.qty_'+fieldName).val());
+        // alert( fieldName);
+        // alert( qty);
+         var price = parseFloat($('.price_'+fieldName).text());
+         var total = price*qty;
+        //  var price = '.'+fieldName;
+        $('.total_'+fieldName).text(total);
+        tinh_total();
+    });
+
+
+
+
+
+var qty_item=0;
+    $('.shoping_tr').each(function (){
+    qty_item++;
+});
+
+// alert(qty_item);
+function tinh_total(){
+  price_total = 0;
+    for (let i = 1; i<=qty_item; i++) {
+    price_total+=parseFloat($('#'+i).text());
+    }
+    $('.all_sub').text(price_total);
+    // alert(price_total);
+    discount=parseInt($('.discount').text());
+    // alert(discount);
+
+    total_after_discount=price_total * ((100-discount)/100);
+    $('.all_total').text( total_after_discount);
+
+
+}
+    
+  
+   
+
+  });
+
+    </script>
 </html>
