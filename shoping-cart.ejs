@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ogani Template" />
+    <meta name="keywords" content="Ogani, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ogani</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <!-- <div id="preloder">
+        <div class="loader"></div>
+    </div> -->
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+      <div class="humberger__menu__logo">
+        <a href="#"><img src="img/logo.png" alt="" /></a>
+      </div>
+      <div class="humberger__menu__cart">
+        <ul>
+          <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
+          <li>
+            <a href="/shoping-cart"><i class="fa fa-shopping-bag"></i> <span><%=session.totalQty%></span></a>
+        </li>
+      </ul>
+      <div class="header__cart__price">item: <span><%=session.totalPrice%> </span></div>
+      </div>
+      <div class="humberger__menu__widget">
+        <!-- <div class="header__top__right__language">
+                <img src="img/language.png" alt="">
+                <div>English</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">Spanis</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div> -->
+        <!-- <div class="header__top__right__auth">
+                <a href="#"><i class="fa fa-user"></i> Login</a>
+            </div> -->
+      </div>
+      <nav class="humberger__menu__nav mobile-menu">
+        <ul>
+          <li class="active"><a href="/index">Home</a></li>
+          <li><a href="/shop-grid">Shop</a></li>
+          <li>
+            <a href="#">Pages</a>
+            <ul class="header__menu__dropdown">
+              <!-- <li><a href="/shop-details">Shop Details</a></li> -->
+              <li><a href="/shoping-cart">Shoping Cart</a></li>
+              <li><a href="/checkout">Check Out</a></li>
+              <!-- <li><a href="/blog-details">Blog Details</a></li> -->
+            </ul>
+          </li>
+          <!-- <li><a href="/blog">Blog</a></li> -->
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/about">About us</a></li>
+        </ul>
+      </nav>
+      <div id="mobile-menu-wrap"></div>
+      <!-- <div class="header__top__right__social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        </div> -->
+      <!-- <div class="humberger__menu__contact">
+            <ul>
+                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li>Free Shipping for all Order of $99</li>
+            </ul>
+        </div> -->
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <!-- <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li>Free Shipping for all Order of $99</li>
+                            </ul>
+                        </div> -->
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="header__top__right">
+                <!-- <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div> -->
+                <!-- <div class="header__top__right__language">
+                                <img src="img/language.png" alt="">
+                                <div>English</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Spanis</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </div> -->
+                <!-- <div class="header__top__right__auth">
+                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                            </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="/index"><img src="img/logo.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li><a href="/index">Home</a></li>
+                <li class="active"><a href="/shop-grid">Shop</a></li>
+                <li>
+                  <a href="#">Pages</a>
+                  <ul class="header__menu__dropdown">
+                    <!-- <li><a href="/shop-details">Shop Details</a></li> -->
+                    <li><a href="/shoping-cart">Shoping Cart</a></li>
+                    <li><a href="/checkout">Check Out</a></li>
+                    <!-- <li><a href="/blog-details">Blog Details</a></li> -->
+                  </ul>
+                </li>
+                <!-- <li><a href="/blog">Blog</a></li> -->
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">About us</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
+                <li>
+                  <a href="/shoping-cart"><i class="fa fa-shopping-bag"></i> <span><%=session.totalQty%></span></a>
+        </li>
+      </ul>
+      <div class="header__cart__price">item: <span><%=session.totalPrice%> </span></div>
+            </div>
+          </div>
+        </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section Begin -->
+    <%- include('selection'); %>
+    <!-- Hero Section End -->
+<%- include('validateemail'); %>
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="breadcrumb__text">
+              <h2>Shopping Cart</h2>
+              <div class="breadcrumb__option">
+                <a href="/index">Home</a>
+                <span>Shopping Cart</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="shoping__cart__table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="shoping__product">Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if(session.totalQty!=0){
+                    var id = 0;
+                      
+                      getcart.forEach(e=>{ id++; %>
+                      <!-------------------------- vong lap nhieu the tr ----------------------------- -->
+                    <tr class="shoping_tr">
+                    <td class="shoping__cart__item"  field='updates_<%=e.item.tensp %>'>
+                      <img style="width: 100px;" src="images/<%=e.item.maloaisp%>/<%=e.item.fileanh%>" alt="" />
+                      <h5><%=e.item.tensp%><%if(e.item.phantram){%><label>&#160;( -<%=e.item.phantram%>%)</label><%}%></h5> 
+                    </td>
+
+                    <td class="shoping__cart__price" >
+                      <div  class='price_updates_<%=e.item._id %>' >   <%=e.totalprice%> </div>
+                    </td>
+
+                    <td class="shoping__cart__quantity" >
+                      <div class="quantity">
+                        <div class="pro-qty" id="bt_update" field='updates_<%=e.item._id %>' >
+                          <input type="text" value="<%=e.qty%>" class='qty_updates_<%=e.item._id %>' field='updates_<%=e.item._id %>' />
+                        </div>
+                      </div>
+                    </td>
+
+                    <td class="shoping__cart__total" >
+                      <div  class='total_updates_<%=e.item._id %>' id='<%= id%>'><%=e.totalprice%> </div>
+                    </td>
+
+                    <td class="shoping__cart__item__close">
+                      <span class="icon_close"></span>
+                    </td>
+
+                  </tr>
+                  <!-- ---------------------------------------------------------------------------------------- -->
+                      <%})
+                      %>
+                  <%}
+                  %>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="shoping__cart__btns">
+              <a href="/shop-grid" class="primary-btn cart-btn"
+                >CONTINUE SHOPPING</a
+              >
+              <!-- <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a> -->
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="shoping__continue">
+              <div class="shoping__discount">
+                <h5>Discount Codes</h5>
+                <form action="/add-coupon" method="POST">
+                  <input type="text" name="coupon" placeholder="Enter your coupon code" />
+                  <button type="submit" class="site-btn">APPLY COUPON</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="shoping__checkout">
+              <h5>Cart Total</h5>
+              <ul>
+                <li>Subtotal <span class="all_sub"><%=subtotal%> </span></li>
+                <li > Discount(%) <span  class="discount"><%=phantram%> </></li>
+                <li>Total <span class="all_total"><%=subtotal - (subtotal*phantram/100)%> </span></li>
+              </ul>
+              <a href="/checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shoping Cart Section End -->
+
+    <!-- Footer Section Begin -->
+    <%- include('footer'); %>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  <script>
+// var n = 0 ;
+//     var id=0;
+//     // $('.pro-qty input').change( function() {
+//     $('.shoping_tr').each(function (){
+//       id++;
+//   var qty = $('.pro-qty_{{ id }} input').val();
+//   // alert(price);
+//   var price= parseFloat($('.shoping__cart__price_{{ id }}').text());
+// alert (price);
+// qty=2;
+//   var total = qty*price ;
+//   $('.shoping__cart__total_{{ id }}').text(total);
+
+    
+
+//  });
+ 
+// });
+
+jQuery(document).ready(function(){
+    // This button will increment the value
+    
+    var price_total= 0;
+    $('.pro-qty').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // alert(fieldName);
+        // Get its current value
+        var qty = parseInt($('.qty_'+fieldName).val());
+        // alert( fieldName);
+        // alert( qty);
+         var price = parseFloat($('.price_'+fieldName).text());
+        //  alert(qty);
+         var total = price*qty;
+        //  var price = '.'+fieldName;
+        $('.total_'+fieldName).text(total);
+        tinh_total();
+        
+    });
+    // loi chua tinh tong all 
+    $('.pro-qty input').change(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // alert(fieldName);
+        // Get its current value
+        var qty = parseInt($('.qty_'+fieldName).val());
+        // alert( fieldName);
+        // alert( qty);
+         var price = parseFloat($('.price_'+fieldName).text());
+         var total = price*qty;
+        //  var price = '.'+fieldName;
+        $('.total_'+fieldName).text(total);
+        tinh_total();
+    });
+
+
+
+
+
+var qty_item=0;
+    $('.shoping_tr').each(function (){
+    qty_item++;
+});
+
+// alert(qty_item);
+function tinh_total(){
+  price_total = 0;
+    for (let i = 1; i<=qty_item; i++) {
+    price_total+=parseFloat($('#'+i).text());
+    }
+    $('.all_sub').text(price_total);
+    // alert(price_total);
+    discount=parseInt($('.discount').text());
+    // alert(discount);
+
+    total_after_discount=price_total * ((100-discount)/100);
+    $('.all_total').text( total_after_discount);
+
+
+}
+    
+  
+   
+
+  });
+
+    </script>
+</html>
